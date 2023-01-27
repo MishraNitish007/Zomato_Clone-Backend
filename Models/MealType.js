@@ -15,7 +15,12 @@ const MealTypeSchema = new Schema({
     meal_type: {
         type: Number,
         required: true
-    }
+    },
+    image: {
+        type: String,
+        required: true
+    },
+
 })
 
 module.exports = mongoose.model('MealType', MealTypeSchema);  // exporting the model

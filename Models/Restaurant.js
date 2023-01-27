@@ -4,55 +4,51 @@ const Schema = mongoose.Schema;
 
 // Registering the Restaurant Schema
 const RestaurantSchema = new Schema({
-    name: {
-        type: String
-        // required: true
+    city_id :{
+        type: String,
+        required:true
     },
-    city: {
-        type: String
-        // required: true
+    name :{
+        type:String,
+        required:true
     },
-    location_id: {
-        type: String
-        // required: true
+    city_name:{
+        type:String,
+        required:true
     },
-    city_id: {
-        type: String
-        // required: true
+    city : {
+        type:Number,
+        required:true
     },
-    locality: {
-        type: String
-        // required: true
+    locality :{
+        type:String,
+        required:true
     },
-    thumb: {
-        type: String
-        // required: true
+    area:{
+        type:Number,
+        required:true
     },
-    aggregate_rating: {
-        type: Number
-        // required: true
+    address:{
+        type:String,
+        required:true
     },
-    rating_text: {
-        type: String
-        // required: true
+    thumb:{
+        type:String,
+        required:true
     },
-    min_price: {
-        type: Number
-        // required: true
+    cost:{
+        type:Number,
+        required:true
     },
-    contact_number: {
-        type: Number
-        // required: true
-    },
-    type: {
-        type: Array
-        // required: true
-    },
-    cuisine_id: {
-        type: Number
-        // required: true
-    }
-})
+    type:[{
+        mealtype:Number,
+        name :String
+    }],
+    Cuisine:[{
+        cuisine:Number,
+        name :String
+    }]
+});
 
 // checking the model existence, if not exist then create collection in DB
 module.exports = mongoose.models.Restaurant || mongoose.model('Restaurant', RestaurantSchema);

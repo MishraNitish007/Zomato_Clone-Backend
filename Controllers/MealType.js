@@ -12,8 +12,10 @@ exports.addMealType = (req, res, next) => {
     const name = req.body.name;
     const content = req.body.content;
     const meal_type = req.body.meal_type;
+    const image = req.body.image;
 
-    const MT = new MealType({ name: name, content: content, meal_type: meal_type });
+
+    const MT = new MealType({ name: name, content: content, meal_type: meal_type,image:image });
     MT.save().then(result => {
         res.status(200).json({ message: "MealType Added Sucessfully", mealtype: result })
     }).catch(err => {
