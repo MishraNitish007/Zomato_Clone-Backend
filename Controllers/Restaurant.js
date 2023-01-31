@@ -110,8 +110,16 @@ exports.addRestaurantList = (req, res, next) => {
     const locality =req.body.locality;
     const thumb=req.body.thumb;
     const city=req.body.city;
+    const area=req.body.area;
+    const address=req.body.address;
+    const cost=req.body.cost;
+    const type=req.body.type;
+    const mealtype=req.body.mealtype;
+    const Cuisine=req.body.Cuisine;
+    const cuisine=req.body.cuisine;
+    const contact =req.body.contact;
 
-    const Rest = new Restaurant({ name: name, locality: locality, location_id: location_id,thumb:thumb,city_id:city_id ,city:city});
+    const Rest = new Restaurant({ name: name, locality: locality, location_id: location_id,thumb:thumb,city_id:city_id ,city:city,area:area,address:address,cost:cost,type:type,mealtype:mealtype,Cuisine:Cuisine,cuisine:cuisine,contact:contact});
     Rest.save().then(result => {
         res.status(200).json({ message: "Restaurant Added Sucessfully", restaurant: result })
     }).catch(err => {

@@ -12,12 +12,12 @@ const RestaurantSchema = new Schema({
         type:String,
         required:true
     },
-    city_name:{
-        type:String,
+    contact:{
+        type:Number,
         required:true
     },
     city : {
-        type:Number,
+        type:String,
         required:true
     },
     locality :{
